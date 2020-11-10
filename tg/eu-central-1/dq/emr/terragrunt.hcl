@@ -24,6 +24,7 @@ dependencies {
     "../emr-ec2-profile",
     "../emr-service-role",
     "../vpc",
+    "../s3",
   ]
 }
 
@@ -44,14 +45,19 @@ dependency "vpc" {
   config_path = "../vpc"
 }
 
+dependency "s3" {
+  config_path = "../s3"
+}
+
 inputs = {
   name     = "${local.common_prefix}-${local.practice}"
   key_name = local.config.key_name
+  log_uri  = "s3://${dependency.s3.outputs.this.logs.bucket}/logs/"
 
   emr_managed_master_security_group = dependency.security_group.outputs.this.id
   emr_managed_slave_security_group  = dependency.security_group.outputs.this.id
 
   instance_profile = dependency.emr_ec2_profile.outputs.this.arn
   service_role     = dependency.emr_service_role.outputs.this.arn
-  subnet_id        = dependency.vpc.outputs.public_subnet_arns.0
+  subnet_id        = dependency.vpc.outputs.public_subnets.0
 }

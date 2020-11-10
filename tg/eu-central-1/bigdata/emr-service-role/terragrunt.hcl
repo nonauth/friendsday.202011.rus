@@ -19,18 +19,6 @@ locals {
 }
 
 
-dependencies {
-  paths = [
-    "../s3",
-  ]
-}
-
-
-dependency "s3" {
-  config_path = "../s3"
-}
-
-
 inputs = {
   name = "${local.common_prefix}-${local.practice}-emr"
 }

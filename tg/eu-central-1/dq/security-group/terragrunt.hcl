@@ -37,23 +37,9 @@ inputs = {
   description = "Friedsday EMR cluster for ${local.practice}"
 
   ingress_rules = {
-    internal = {
-      from_port   = 0
-      to_port     = 0
-      protocol    = "-1"
-      cidr_blocks = ["10.0.0.0/16"]
-    }
-
     ssh = {
       from_port   = 22
       to_port     = 22
-      protocol    = "TCP"
-      cidr_blocks = ["0.0.0.0/0"]
-    }
-
-    jupyter = {
-      from_port   = 7777
-      to_port     = 7777
       protocol    = "TCP"
       cidr_blocks = ["0.0.0.0/0"]
     }

@@ -14,6 +14,11 @@ variable "instance_profile" {
   description = ""
 }
 
+variable "log_uri" {
+  type        = string
+  description = "URI to collect EMR logs"
+}
+
 variable "key_name" {
   type        = string
   description = "EC2 key name"
@@ -78,7 +83,7 @@ variable "core_instance_count" {
 variable "core_instance_type" {
   type        = string
   description = ""
-  default     = "t3.xlarge"
+  default     = "m5.xlarge"
 }
 
 variable "core_volumes_per_instance" {
@@ -90,7 +95,7 @@ variable "core_volumes_per_instance" {
 variable "ebs_root_valume_size" {
   type        = number
   description = ""
-  default     = 200
+  default     = 100
 }
 
 variable "keep_job_flow_alive_when_no_steps" {
@@ -108,7 +113,7 @@ variable "master_instance_count" {
 variable "master_instance_type" {
   type        = string
   description = ""
-  default     = "t3.xlarge"
+  default     = "m5.xlarge"
 }
 
 variable "release_label" {

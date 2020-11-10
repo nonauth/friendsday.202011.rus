@@ -2,6 +2,7 @@ resource "aws_emr_cluster" "this" {
   name          = var.name
   release_label = var.release_label
   applications  = var.applications
+  log_uri       = var.log_uri
 
   termination_protection            = var.termination_protection
   keep_job_flow_alive_when_no_steps = var.keep_job_flow_alive_when_no_steps
