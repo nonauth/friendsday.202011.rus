@@ -14,6 +14,11 @@ variable "instance_profile" {
   description = ""
 }
 
+variable "key_name" {
+  type        = string
+  description = "EC2 key name"
+}
+
 variable "name" {
   type        = string
   description = ""

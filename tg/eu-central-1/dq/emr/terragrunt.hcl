@@ -45,7 +45,8 @@ dependency "vpc" {
 }
 
 inputs = {
-  name = "${local.common_prefix}-${local.practice}"
+  name     = "${local.common_prefix}-${local.practice}"
+  key_name = local.config.key_name
 
   emr_managed_master_security_group = dependency.security_group.outputs.this.id
   emr_managed_slave_security_group  = dependency.security_group.outputs.this.id

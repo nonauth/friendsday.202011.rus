@@ -7,6 +7,7 @@ resource "aws_emr_cluster" "this" {
   keep_job_flow_alive_when_no_steps = var.keep_job_flow_alive_when_no_steps
 
   ec2_attributes {
+    key_name                          = var.key_name
     subnet_id                         = var.subnet_id
     emr_managed_master_security_group = var.emr_managed_master_security_group
     emr_managed_slave_security_group  = var.emr_managed_slave_security_group
