@@ -1,0 +1,37 @@
+---
+tfstate_bucket: nonauth-friendsday-202011-rus
+tfstate_prefix: tfstates
+environment: friendsday-202011-rus
+terraform_version: 0.13.4
+aws_provider_version: 3.14.1
+aws_default_region: eu-central-1
+common_prefix: nonauth-friendsday
+key_name: friedsday202011
+iam_path: /friedsday/
+dq:
+  user_count: 60
+  vpc:
+    cidr: 10.100.0.0/16
+    azs:
+      - eu-central-1a
+    private_subnets: []
+    public_subnets:
+      - 10.100.0.0/24
+bigdata:
+  user_count: 60
+  vpc:
+    cidr: 10.101.0.0/16
+    azs:
+      - eu-central-1a
+    private_subnets: []
+    public_subnets:
+      - 10.101.0.0/24
+devops:
+  user_count: 60
+  vpc:
+    cidr: 10.102.0.0/16
+    azs:
+      - eu-central-1a
+    private_subnets: []
+    public_subnets:
+      - 10.102.0.0/24
