@@ -6,8 +6,8 @@ terraform_version: 0.13.4
 aws_provider_version: 3.14.1
 aws_default_region: eu-central-1
 common_prefix: nonauth-friendsday
-key_name: friedsday202011
-iam_path: /friedsday/
+key_name: friendsday202011
+iam_path: /friendsday/
 dq:
   user_count: 60
   vpc:
