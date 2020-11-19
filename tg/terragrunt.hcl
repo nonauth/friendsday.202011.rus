@@ -56,6 +56,8 @@ locals {
 
 
 inputs = {
-  iam_path = local.iam_path
-  tags     = local.tags
+  iam_path      = local.iam_path
+  aws_region    = local.aws_default_region
+  common_prefix = local.config.common_prefix
+  tags          = local.tags
 }
