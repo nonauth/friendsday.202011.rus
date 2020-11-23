@@ -68,4 +68,14 @@ inputs = {
     "JupyterHUB",
     "Zeppelin",
   ]
+
+  bootstrap_actions = {
+    deequ = {
+      path = "s3://${dependency.s3.outputs.this.infr.bucket}/deequ.sh"
+      args = [
+        "${dependency.s3.outputs.this.infr.bucket}",
+        "deequ-1.0.5.jar",
+      ]
+    }
+  }
 }

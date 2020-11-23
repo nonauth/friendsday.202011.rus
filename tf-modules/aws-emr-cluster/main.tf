@@ -38,9 +38,9 @@ resource "aws_emr_cluster" "this" {
     iterator = item
 
     content {
-      path = each.value.path
-      name = each.key
-      args = each.value.args
+      path = item.value.path
+      name = item.key
+      args = item.value.args
     }
   }
 
