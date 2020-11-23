@@ -60,4 +60,12 @@ inputs = {
   instance_profile = dependency.emr_ec2_profile.outputs.this.arn
   service_role     = dependency.emr_service_role.outputs.this.arn
   subnet_id        = dependency.vpc.outputs.public_subnets.0
+
+  applications = [
+    "Spark",
+    "Hive",
+    "Hadoop",
+    "JupyterHUB",
+    "Zeppelin",
+  ]
 }
