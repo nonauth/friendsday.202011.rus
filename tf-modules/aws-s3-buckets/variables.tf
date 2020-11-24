@@ -8,6 +8,11 @@ variable "s3_buckets" {
   }))
 }
 
+variable "force_destroy" {
+  type        = bool
+  default     = true
+  description = "Allow force destroy buckets"
+}
 
 // Optional variables
 variable "tags" {

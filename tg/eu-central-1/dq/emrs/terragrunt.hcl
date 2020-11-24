@@ -4,7 +4,7 @@ include {
 
 
 terraform {
-  source = "${local.tfmodules_origin}//aws-emr-cluster"
+  source = "${local.tfmodules_origin}//aws-emr-clusters"
 }
 
 
@@ -39,11 +39,17 @@ dependency "s3" {
   config_path = "../s3"
 }
 
+dependency "key_pairs" {
+  config_path = "../key-pairs"
+}
+
 
 inputs = {
-  name     = "${local.common_prefix}-${local.practice}"
-  key_name = local.config.key_name
-  log_uri  = "s3://${dependency.s3.outputs.this.logs.bucket}/logs/"
+  emr_names = [
+    for key in values(dependency.key_pairs.outputs.this) : key.id
+  ]
+
+  log_uri = "s3://${dependency.s3.outputs.this.logs.bucket}/logs/"
 
   emr_managed_master_security_group = dependency.security_group.outputs.this.id
   emr_managed_slave_security_group  = dependency.security_group.outputs.this.id

@@ -4,7 +4,7 @@ include {
 
 
 terraform {
-  source = "${local.tfmodules_origin}//aws-iam-emr-instance-profile"
+  source = "${local.tfmodules_origin}//ssh-keys"
 }
 
 
@@ -19,16 +19,11 @@ locals {
 }
 
 
-dependency "s3" {
-  config_path = "../s3"
+dependency "users" {
+  config_path = "../users/"
 }
 
 
 inputs = {
-  name = "${local.common_prefix}-${local.practice}-emr-ec2"
-
-  s3_rw_prefixes = [
-    "${dependency.s3.outputs.this.logs.arn}/*",
-    "${dependency.s3.outputs.this.raw.arn}/*",
-  ]
+  keys = keys(dependency.users.outputs.this)
 }

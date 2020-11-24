@@ -19,13 +19,6 @@ locals {
 }
 
 
-dependencies {
-  paths = [
-    "../s3",
-  ]
-}
-
-
 dependency "s3" {
   config_path = "../s3"
 }

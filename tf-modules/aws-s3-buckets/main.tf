@@ -17,7 +17,8 @@ resource "aws_s3_bucket" "this" {
     random_string.this[each.key].result
   ])
 
-  acl = each.value.acl
+  acl           = each.value.acl
+  force_destroy = var.force_destroy
 
   tags = merge(var.tags, each.value.tags)
 

@@ -19,13 +19,6 @@ locals {
 }
 
 
-dependencies {
-  paths = [
-    "../vpc",
-  ]
-}
-
-
 dependency "vpc" {
   config_path = "../vpc"
 }
