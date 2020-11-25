@@ -76,5 +76,12 @@ inputs = {
         "deequ-1.0.5.jar",
       ]
     }
+    zeppelin = {
+      path = "s3://${dependency.s3.outputs.this.infr.bucket}/zeppelin.sh"
+      args = [
+        "2FR67FUHX",
+        "s3://${dependency.s3.outputs.this.landing.bucket}/zeppelin_notebooks/AWS_Deequ_demo_final.json",
+      ]
+    }
   }
 }
