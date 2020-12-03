@@ -57,6 +57,10 @@ inputs = {
   emr_managed_master_security_group = dependency.security_group.outputs.this.id
   emr_managed_slave_security_group  = dependency.security_group.outputs.this.id
 
+  core_instance_count  = 1
+  core_instance_type   = "m5.xlarge"
+  master_instance_type = "m5.xlarge"
+
   instance_profile = dependency.emr_ec2_profile.outputs.this.arn
   service_role     = dependency.emr_service_role.outputs.this.arn
   subnet_id        = dependency.vpc.outputs.public_subnets.0

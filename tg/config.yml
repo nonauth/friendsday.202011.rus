@@ -9,7 +9,7 @@ common_prefix: nonauth-friendsday
 key_name: friendsday202011
 iam_path: /friendsday/
 dq:
-  user_count: 1
+  user_count: 19
   vpc:
     cidr: 10.100.0.0/16
     azs:
@@ -18,7 +18,7 @@ dq:
     public_subnets:
       - 10.100.0.0/24
 bigdata:
-  user_count: 20
+  user_count: 1
   vpc:
     cidr: 10.101.0.0/16
     azs:
@@ -27,7 +27,7 @@ bigdata:
     public_subnets:
       - 10.101.0.0/24
 devops:
-  user_count: 20
+  user_count: 1
   vpc:
     cidr: 10.102.0.0/16
     azs:
