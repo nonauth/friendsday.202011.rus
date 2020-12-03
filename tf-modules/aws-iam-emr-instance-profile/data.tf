@@ -78,6 +78,16 @@ data "aws_iam_policy_document" "this" {
   statement {
     effect = "Allow"
     actions = [
+      "dynamodb:*",
+    ]
+    resources = [
+      "*",
+    ]
+  }
+
+  statement {
+    effect = "Allow"
+    actions = [
       "elasticmapreduce:Describe*",
       "elasticmapreduce:ListBootstrapActions",
       "elasticmapreduce:ListClusters",
