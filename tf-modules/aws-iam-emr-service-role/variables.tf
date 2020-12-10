@@ -17,6 +17,12 @@ variable "policy_arn" {
   default     = "arn:aws:iam::aws:policy/service-role/AmazonElasticMapReduceRole"
 }
 
+variable "policy_dynamodb_arn" {
+  type        = string
+  description = "EMR policy arn"
+  default     = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Common resource tags"

@@ -18,7 +18,7 @@ dq:
     public_subnets:
       - 10.100.0.0/24
 bigdata:
-  user_count: 1
+  user_count: 30
   vpc:
     cidr: 10.101.0.0/16
     azs:

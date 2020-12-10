@@ -57,7 +57,7 @@ inputs = {
   emr_managed_master_security_group = dependency.security_group.outputs.this.id
   emr_managed_slave_security_group  = dependency.security_group.outputs.this.id
 
-  core_instance_count  = 1
+  core_instance_count  = 3
   core_instance_type   = "m5.xlarge"
   master_instance_type = "m5.xlarge"
 

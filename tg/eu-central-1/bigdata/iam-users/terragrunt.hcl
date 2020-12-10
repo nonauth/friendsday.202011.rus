@@ -4,7 +4,7 @@ include {
 
 
 terraform {
-  source = "${local.tfmodules_origin}//user-generator"
+  source = "${local.tfmodules_origin}//aws-iam-bigdata-users"
 }
 
 
@@ -19,7 +19,10 @@ locals {
 }
 
 
+dependency "users" {
+  config_path = "../users"
+}
+
 inputs = {
-  user_count = local.config[local.practice].user_count
-  use_number = true
+  users = dependency.users.outputs.this
 }
